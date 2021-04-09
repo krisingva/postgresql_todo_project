@@ -6,7 +6,7 @@ GEM
     multi_json (1.12.1)
     nio4r (2.5.4)
     pg (1.2.3)
-    puma (5.2.0)
+    puma (5.1.1)
       nio4r (~> 2.0)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -32,7 +32,7 @@ PLATFORMS
 DEPENDENCIES
   erubis
   pg
-  puma
+  puma (= 5.1.1)
   sinatra (~> 1.4.7)
   sinatra-contrib
 
