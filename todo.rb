@@ -8,6 +8,7 @@ configure do
   enable :sessions
   set :session_secret, "secret"
   set :erb, escape_html: true
+  # set :environment, :production
 end
 
 configure(:development) do
@@ -206,4 +207,19 @@ post "/lists/:id/complete_all" do
 
   session[:success] = "All todos have been completed."
   redirect "/lists/#{@list_id}"
+end
+
+# See environment setting:
+# get "/environment" do
+#   if settings.development?
+#     "development!"
+#   elsif settings.production?
+#     "production"
+#   else
+#     "not development or production!"
+#   end
+# end
+
+after do
+  @storage.disconnect
 end
